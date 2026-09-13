@@ -39,7 +39,7 @@ export default function ProfileScreen({
   const [formEmail, setFormEmail] = useState('');
   const [formSenha, setFormSenha] = useState('');
   const [loadingAuth, setLoadingAuth] = useState(false);
-  const [showAuthSenha, setShowAuthSenha] = useState(false);
+  const [showAuthSenha, setShowAuthSenha] = useState(true);
 
   // Dispara a abertura automática do modal de autenticação caso venha da tela de pedidos
   React.useEffect(() => {
@@ -348,6 +348,8 @@ export default function ProfileScreen({
                   style={[styles.input, { backgroundColor: colors.bg, color: colors.text, borderColor: colors.cardBorder }]}
                   placeholder="Seu nome"
                   placeholderTextColor={colors.textSubtle}
+                  autoComplete="off"
+                  importantForAutofill="no"
                   value={formNome}
                   onChangeText={setFormNome}
                 />

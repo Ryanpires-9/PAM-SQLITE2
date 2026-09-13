@@ -37,7 +37,7 @@ export default function WelcomeScreen({ onContinueAsGuest, onLoginSuccess }) {
   const [senha, setSenha] = useState('');
   const [nome, setNome] = useState('');
   const [loading, setLoading] = useState(false);
-  const [showSenha, setShowSenha] = useState(false);
+  const [showSenha, setShowSenha] = useState(true);
 
   // Termos de Privacidade e Consentimento (Etapa 2)
   const [acceptedTerms, setAcceptedTerms] = useState(false);
@@ -411,6 +411,8 @@ export default function WelcomeScreen({ onContinueAsGuest, onLoginSuccess }) {
                     style={styles.input}
                     placeholder="Ex: João Silva"
                     placeholderTextColor="#64748b"
+                    autoComplete="off"
+                    importantForAutofill="no"
                     value={nome}
                     onChangeText={setNome}
                   />
