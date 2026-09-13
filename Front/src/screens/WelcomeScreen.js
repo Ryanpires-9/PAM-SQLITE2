@@ -425,6 +425,8 @@ export default function WelcomeScreen({ onContinueAsGuest, onLoginSuccess }) {
                   placeholderTextColor="#64748b"
                   keyboardType="email-address"
                   autoCapitalize="none"
+                  autoComplete="off"
+                  importantForAutofill="no"
                   value={email}
                   onChangeText={setEmail}
                 />
@@ -438,6 +440,8 @@ export default function WelcomeScreen({ onContinueAsGuest, onLoginSuccess }) {
                     placeholder="Mínimo 6 caracteres"
                     placeholderTextColor="#64748b"
                     secureTextEntry={!showSenha}
+                    autoComplete="off"
+                    importantForAutofill="no"
                     value={senha}
                     onChangeText={setSenha}
                   />

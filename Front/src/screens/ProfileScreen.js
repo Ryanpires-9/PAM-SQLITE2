@@ -362,6 +362,8 @@ export default function ProfileScreen({
                 placeholderTextColor={colors.textSubtle}
                 keyboardType="email-address"
                 autoCapitalize="none"
+                autoComplete="off"
+                importantForAutofill="no"
                 value={formEmail}
                 onChangeText={setFormEmail}
               />
@@ -383,6 +385,8 @@ export default function ProfileScreen({
                   placeholder="••••••••"
                   placeholderTextColor={colors.textSubtle}
                   secureTextEntry={!showAuthSenha}
+                  autoComplete="off"
+                  importantForAutofill="no"
                   value={formSenha}
                   onChangeText={setFormSenha}
                 />
