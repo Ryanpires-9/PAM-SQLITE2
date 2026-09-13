@@ -1,0 +1,98 @@
+### 1. Testar Status da API
+GET http://localhost:3000/
+
+### 2. Listar todas as Categorias
+GET http://localhost:3000/api/categorias
+
+### 3. Listar Produtos (Vitrine da Loja)
+GET http://localhost:3000/api/produtos
+
+### 4. Filtrar Produtos por Categoria (ex: Categoria 1 = Smartphones)
+GET http://localhost:3000/api/produtos?categoria=1
+
+### 5. Buscar Produtos por Texto (ex: "Gamer")
+GET http://localhost:3000/api/produtos?busca=Gamer
+
+### 6. Detalhes de um Produto específico
+GET http://localhost:3000/api/produtos/1
+
+### 7. Login como Usuário Comum (Cliente)
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "cliente@loja.com",
+  "senha": "123456"
+}
+
+### 8. Login como Administrador (Admin)
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@loja.com",
+  "senha": "admin123"
+}
+
+### 9. [CLIENTE] Realizar Pedido (Checkout com Carrinho)
+POST http://localhost:3000/api/pedidos
+Content-Type: application/json
+
+{
+  "usuario_id": 2,
+  "forma_pagamento": "PIX",
+  "endereco_entrega": "Rua das Flores, 123 - Centro",
+  "itens": [
+    {
+      "produto_id": 5,
+      "quantidade": 1
+    },
+    {
+      "produto_id": 6,
+      "quantidade": 1
+    }
+  ]
+}
+
+### 10. [CLIENTE] Listar Meus Pedidos (filtrado por usuario_id)
+GET http://localhost:3000/api/pedidos?usuario_id=2
+
+### 11. [ADMIN] Listar Todos os Pedidos da Loja
+GET http://localhost:3000/api/pedidos
+
+### 12. [ADMIN] Alterar Status do Pedido (Pendente, Pago, Enviado, Entregue, Cancelado)
+PATCH http://localhost:3000/api/pedidos/1/status
+Content-Type: application/json
+
+{
+  "status": "Enviado"
+}
+
+### 13. [ADMIN] Cadastrar Novo Produto
+POST http://localhost:3000/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "iPad Air M2 11 polegadas",
+  "descricao": "Chip M2 potente, tela Liquid Retina avançada e compatível com Apple Pencil Pro.",
+  "preco": 6299.00,
+  "categoria_id": 1,
+  "estoque": 7,
+  "imagem_url": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80",
+  "especificacoes": "Chip M2 | Tela 11 pol Liquid Retina | 128GB | Wi-Fi 6E"
+}
+
+### 14. [ADMIN] Atualizar Produto
+PUT http://localhost:3000/api/produtos/1
+Content-Type: application/json
+
+{
+  "preco": 8499.00,
+  "estoque": 18
+}
+
+### 15. [ADMIN] Métricas do Dashboard
+GET http://localhost:3000/api/admin/dashboard
+
+### 16. [ADMIN] Excluir Produto
+DELETE http://localhost:3000/api/produtos/9

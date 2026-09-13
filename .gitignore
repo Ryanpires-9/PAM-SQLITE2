@@ -1,0 +1,27 @@
+# Node dependencies
+node_modules/
+Server/node_modules/
+Front/node_modules/
+
+# Expo & Mobile builds
+.expo/
+.expo-shared/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Large installer binaries & extension packages (GitHub limit is 100MB)
+Plugins/
+*.msi
+*.exe
+*.vsix
+
+# Logs & temporary files
+*.log
+scratch/
+.system_generated/
+.DS_Store
+Thumbs.db

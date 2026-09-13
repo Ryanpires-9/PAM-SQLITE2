@@ -1,0 +1,56 @@
+================================================================================
+                    MURILOVESTORE - CREDENCIAIS DE ACESSO
+================================================================================
+Desenvolvido por: Cabryello
+E-mail de Suporte: cabryello@gmail.com
+Sistema: React Native (Expo SDK 57) + Node.js Express + SQLite 3
+
+--------------------------------------------------------------------------------
+1. CONTA DE ADMINISTRADOR (LOJISTA)
+--------------------------------------------------------------------------------
+E-mail:   cabryello@gmail.com
+Senha:    123456
+Nome:     Cabryello (Admin MuriloveStore)
+Permissão: admin
+
+O que pode fazer:
+  - Navegar e comprar na vitrine como qualquer usuário.
+  - Acessar o "Painel do Lojista" na aba "Conta".
+  - Cadastrar novos produtos eletrônicos com imagem e especificações.
+  - Editar preços, estoque e descrições dos produtos.
+  - Excluir produtos do catálogo.
+  - Visualizar todos os pedidos dos clientes e atualizar o status (Enviado/Entregue/Cancelado).
+  - Promover clientes a administradores ou rebaixar administradores a clientes.
+  - Visualizar métricas de faturamento, faturamento no PIX e alertas de estoque baixo.
+
+--------------------------------------------------------------------------------
+2. CONTA DE CLIENTE PADRÃO (COMPRADOR)
+--------------------------------------------------------------------------------
+E-mail:   cliente@loja.com
+Senha:    123456
+Nome:     Lucas Silva (Cliente)
+Permissão: cliente
+
+O que pode fazer:
+  - Navegar pelo catálogo em 2 colunas com filtros por categoria.
+  - Abrir detalhes do produto com especificações técnicas e garantia de 12 meses.
+  - Adicionar itens ao carrinho de compras.
+  - Finalizar pedidos reais com PIX (5% OFF), Cartão de Crédito ou Boleto.
+  - Consultar o histórico e o status dos pedidos realizados.
+  - Alternar entre Modo Claro e Modo Escuro.
+
+--------------------------------------------------------------------------------
+3. CADASTRO DE NOVOS USUÁRIOS
+--------------------------------------------------------------------------------
+Qualquer novo usuário pode ser cadastrado diretamente na tela de Boas-Vindas
+ou na aba Conta. Novos cadastros iniciam como "cliente" e podem ser promovidos
+para "admin" pelo administrador através do Painel do Lojista.
+
+--------------------------------------------------------------------------------
+4. ENDEREÇOS DA API BACKEND
+--------------------------------------------------------------------------------
+- Local (Navegador/PC):     http://localhost:3000
+- Rede Local (Celular/WiFi): http://192.168.0.12:3000
+- Emulador Android Studio:   http://10.0.2.2:3000
+================================================================================
+
