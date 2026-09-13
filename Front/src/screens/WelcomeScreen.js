@@ -37,6 +37,7 @@ export default function WelcomeScreen({ onContinueAsGuest, onLoginSuccess }) {
   const [senha, setSenha] = useState('');
   const [nome, setNome] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showSenha, setShowSenha] = useState(false);
 
   // Termos de Privacidade e Consentimento (Etapa 2)
   const [acceptedTerms, setAcceptedTerms] = useState(false);
@@ -431,14 +432,27 @@ export default function WelcomeScreen({ onContinueAsGuest, onLoginSuccess }) {
 
               <View style={styles.fieldGroup}>
                 <Text style={styles.label}>Senha</Text>
-                <TextInput
-                  style={styles.input}
-                  placeholder="Mínimo 6 caracteres"
-                  placeholderTextColor="#64748b"
-                  secureTextEntry
-                  value={senha}
-                  onChangeText={setSenha}
-                />
+                <View style={styles.passwordWrap}>
+                  <TextInput
+                    style={[styles.input, { paddingRight: 42 }]}
+                    placeholder="Mínimo 6 caracteres"
+                    placeholderTextColor="#64748b"
+                    secureTextEntry={!showSenha}
+                    value={senha}
+                    onChangeText={setSenha}
+                  />
+                  <TouchableOpacity
+                    style={styles.btnEye}
+                    onPress={() => setShowSenha(!showSenha)}
+                    activeOpacity={0.7}
+                  >
+                    <Ionicons
+                      name={showSenha ? 'eye-off-outline' : 'eye-outline'}
+                      size={20}
+                      color="#94a3b8"
+                    />
+                  </TouchableOpacity>
+                </View>
               </View>
 
               {/* Botão de Ação */}
@@ -844,6 +858,16 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
     fontSize: 14,
     color: '#ffffff'
+  },
+  passwordWrap: {
+    position: 'relative',
+    justifyContent: 'center'
+  },
+  btnEye: {
+    position: 'absolute',
+    right: 12,
+    top: 11,
+    padding: 2
   },
   modalOverlay: {
     flex: 1,

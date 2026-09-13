@@ -39,6 +39,7 @@ export default function ProfileScreen({
   const [formEmail, setFormEmail] = useState('');
   const [formSenha, setFormSenha] = useState('');
   const [loadingAuth, setLoadingAuth] = useState(false);
+  const [showAuthSenha, setShowAuthSenha] = useState(false);
 
   // Dispara a abertura automática do modal de autenticação caso venha da tela de pedidos
   React.useEffect(() => {
@@ -368,14 +369,35 @@ export default function ProfileScreen({
 
             <View style={styles.inputGroup}>
               <Text style={[styles.inputLabel, { color: colors.textMuted }]}>Senha</Text>
-              <TextInput
-                style={[styles.input, { backgroundColor: colors.bg, color: colors.text, borderColor: colors.cardBorder }]}
-                placeholder="••••••••"
-                placeholderTextColor={colors.textSubtle}
-                secureTextEntry
-                value={formSenha}
-                onChangeText={setFormSenha}
-              />
+              <View style={styles.passwordWrap}>
+                <TextInput
+                  style={[
+                    styles.input,
+                    {
+                      backgroundColor: colors.bg,
+                      color: colors.text,
+                      borderColor: colors.cardBorder,
+                      paddingRight: 42
+                    }
+                  ]}
+                  placeholder="••••••••"
+                  placeholderTextColor={colors.textSubtle}
+                  secureTextEntry={!showAuthSenha}
+                  value={formSenha}
+                  onChangeText={setFormSenha}
+                />
+                <TouchableOpacity
+                  style={styles.btnEye}
+                  onPress={() => setShowAuthSenha(!showAuthSenha)}
+                  activeOpacity={0.7}
+                >
+                  <Ionicons
+                    name={showAuthSenha ? 'eye-off-outline' : 'eye-outline'}
+                    size={20}
+                    color={colors.textMuted}
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
 
             <TouchableOpacity
@@ -655,6 +677,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     fontSize: 14
+  },
+  passwordWrap: {
+    position: 'relative',
+    justifyContent: 'center'
+  },
+  btnEye: {
+    position: 'absolute',
+    right: 12,
+    top: 10,
+    padding: 2
   },
   btnSubmit: {
     paddingVertical: 14,
